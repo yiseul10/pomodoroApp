@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Alarm from '../components/Alarm';
 import Explain from '../components/Explain';
 import Navigation from '../components/Navigation';
 import Timer from '../components/Timer';
@@ -12,6 +13,8 @@ export default function Home() {
   const [active, setActive] = useState(0);
   const [consumeSecond, setConsumedSecond] = useState(0);
   const [startTimer, setStartTimer] = useState(false);
+
+  const alarmRef = useRef();
 
   const switchMenu = index => {
     const isYes =
@@ -52,12 +55,17 @@ export default function Home() {
     setLong(10);
   };
 
+  const timeUp = () => {
+    reset();
+    alarmRef.current.play();
+  };
+
   const clockTime = () => {
     const minutes = getTime();
     const setMinutes = updateMinute();
 
-    if (minutes === 0 && setSecond === 0) {
-      reset();
+    if (minutes === 0 && seconds === 0) {
+      timeUp();
     } else if (seconds === 0) {
       setMinutes(minutes => minutes - 1);
       setSecond(59);
@@ -96,6 +104,7 @@ export default function Home() {
           setStartTimer={setStartTimer}
         />
         <Explain />
+        <Alarm ref={alarmRef} />
       </div>
     </div>
   );

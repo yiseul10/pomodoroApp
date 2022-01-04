@@ -3,7 +3,7 @@ import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 export default function Explain() {
   return (
     <RoughNotationGroup show={true}>
-      <div className='text-white'>
+      <div className='text-white pb-12'>
         <div className='pt-20 w-11/12 mx-auto'>
           <h1 className='py-2 text-2xl font-bold'>
             <RoughNotation type='underline' color='#FCBB3D' order='1'>
