@@ -4,7 +4,8 @@ export default function Timer({
   getTime,
   seconds,
   startTimer,
-  setStartTimer
+  startAlarm,
+  reset
 }) {
   const options = ['Pomodoro', 'Short Break', 'Long Break'];
 
@@ -26,16 +27,24 @@ export default function Timer({
         })}
       </div>
       <div className='mt-10 mb-10'>
-        <h1 className='font-semibold text-[#0097FF]'>
-          {active === 0 ? 'Focus Time' : 'Break Time'}
-        </h1>
-        <h1 className='text-8xl font-bold select-none m-0'>
-          {getTime()}:{seconds.toString().padStart(2, '0')}
-        </h1>
+        <div className='flex justify-between'>
+          <h1 className='font-semibold text-[#0097FF]'>
+            {active === 0 ? 'Focus Time' : 'Break Time'}
+          </h1>
+          <button
+            className='rounded-full w-1.5 h-1.5 bg-orange-500'
+            onClick={reset}
+          ></button>
+        </div>
+        <div className='flex items-center'>
+          <h1 className='text-8xl font-bold select-none m-0'>
+            {getTime()}:{seconds.toString().padStart(2, '0')}
+          </h1>
+        </div>
       </div>
       <button
         className='px-12 py-1 rounded-2xl uppercase font-bold border border-gray-500 hover:border-gray-100'
-        onClick={() => setStartTimer(startTimer => !startTimer)}
+        onClick={startAlarm}
       >
         {startTimer ? 'stop' : 'start'}
       </button>

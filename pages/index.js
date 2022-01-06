@@ -12,7 +12,9 @@ export default function Home() {
   const [seconds, setSecond] = useState(0);
   const [active, setActive] = useState(0);
   const [consumeSecond, setConsumedSecond] = useState(0);
+
   const [startTimer, setStartTimer] = useState(false);
+  const [isTimeUp, setIsTimeUp] = useState(false);
 
   const alarmRef = useRef();
 
@@ -57,9 +59,20 @@ export default function Home() {
 
   const timeUp = () => {
     reset();
+    setIsTimeUp(true);
     alarmRef.current.play();
   };
 
+  const muteAlarm = () => {
+    alarmRef.current.pause();
+    alarmRef.current.currentTime = 0;
+  };
+
+  const startAlarm = () => {
+    setIsTimeUp(false);
+    muteAlarm();
+    setStartTimer(start => !start);
+  };
   const clockTime = () => {
     const minutes = getTime();
     const setMinutes = updateMinute();
@@ -94,14 +107,15 @@ export default function Home() {
   return (
     <div className='min-h-screen font-inter bg-gradient-to-tl from-[#050B14]  to-[#1B1C1C]'>
       <div className='max-w-2xl min-h-screen mx-auto'>
-        <Navigation />
+        <Navigation muteAlarm={muteAlarm} isTimeUp={isTimeUp} />
         <Timer
           active={active}
           switchMenu={switchMenu}
           getTime={getTime}
           seconds={seconds}
           startTimer={startTimer}
-          setStartTimer={setStartTimer}
+          startAlarm={startAlarm}
+          reset={reset}
         />
         <Explain />
         <Alarm ref={alarmRef} />
