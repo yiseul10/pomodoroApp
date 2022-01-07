@@ -17,7 +17,21 @@ export default function Home() {
   const [startTimer, setStartTimer] = useState(false);
   const [isTimeUp, setIsTimeUp] = useState(false);
 
+  const [open, setOpen] = useState(false);
+
   const alarmRef = useRef();
+  const pomodoroRef = useRef();
+  const shortBreakRef = useRef();
+  const longBreakRef = useRef();
+
+  const updateTimeDefaultValue = () => {
+    setPomodoro(pomodoroRef.current.value);
+    setShort(shortBreakRef.current.value);
+    setLong(longBreakRef.current.value);
+    setOpen(false);
+    setSecond(0);
+    setConsumedSecond(0);
+  };
 
   const switchMenu = index => {
     const isYes =
@@ -52,10 +66,8 @@ export default function Home() {
   const reset = () => {
     setStartTimer(false);
     setConsumedSecond(0);
-    setSecond(0);
-    setPomodoro(25);
-    setShort(5);
-    setLong(10);
+    // setSecond(0);
+    updateTimeDefaultValue();
   };
 
   const timeUp = () => {
@@ -108,7 +120,11 @@ export default function Home() {
   return (
     <div className='min-h-screen font-inter bg-gradient-to-tl from-[#050B14]  to-[#1B1C1C] relative'>
       <div className='max-w-2xl min-h-screen mx-auto'>
-        <Navigation muteAlarm={muteAlarm} isTimeUp={isTimeUp} />
+        <Navigation
+          muteAlarm={muteAlarm}
+          isTimeUp={isTimeUp}
+          setOpen={setOpen}
+        />
         <Timer
           active={active}
           switchMenu={switchMenu}
@@ -120,7 +136,14 @@ export default function Home() {
         />
         <Explain />
         <Alarm ref={alarmRef} />
-        <Modal />
+        <Modal
+          open={open}
+          setOpen={setOpen}
+          pomodoroRef={pomodoroRef}
+          shortBreakRef={shortBreakRef}
+          longBreakRef={longBreakRef}
+          updateTimeDefaultValue={updateTimeDefaultValue}
+        />
       </div>
     </div>
   );
