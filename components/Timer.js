@@ -31,10 +31,15 @@ export default function Timer({
           <h1 className='font-semibold text-[#0097FF]'>
             {active === 0 ? 'Focus Time' : 'Break Time'}
           </h1>
-          <button
-            className='rounded-full w-1.5 h-1.5 bg-orange-500'
-            onClick={reset}
-          ></button>
+          <div className='relative inline-block group'>
+            <button
+              className='rounded-full w-1.5 h-1.5 bg-orange-500'
+              onClick={reset}
+            ></button>
+            <span className='inline-block invisible w-[100px] rounded p-1 absolute group-hover:visible text-xs bg-orange-600 bottom-full left-1/2 ml-[-50px]'>
+              다시시작
+            </span>
+          </div>
         </div>
         <div className='flex items-center'>
           <h1 className='text-8xl font-bold select-none m-0'>
