@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Alarm from '../components/Alarm';
 import Explain from '../components/Explain';
+import Modal from '../components/Modal';
 import Navigation from '../components/Navigation';
 import Timer from '../components/Timer';
 
@@ -105,7 +106,7 @@ export default function Home() {
   }, [seconds, pomodoro, short, long, startTimer]);
 
   return (
-    <div className='min-h-screen font-inter bg-gradient-to-tl from-[#050B14]  to-[#1B1C1C]'>
+    <div className='min-h-screen font-inter bg-gradient-to-tl from-[#050B14]  to-[#1B1C1C] relative'>
       <div className='max-w-2xl min-h-screen mx-auto'>
         <Navigation muteAlarm={muteAlarm} isTimeUp={isTimeUp} />
         <Timer
@@ -119,6 +120,7 @@ export default function Home() {
         />
         <Explain />
         <Alarm ref={alarmRef} />
+        <Modal />
       </div>
     </div>
   );

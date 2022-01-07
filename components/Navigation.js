@@ -8,7 +8,7 @@ export default function Navigation({ muteAlarm, isTimeUp }) {
       <div className='flex items-center gap-1'>
         <FiBookOpen className='text-sm' />
         <button className="font-['Hi_Melody'] text-xl">
-          <h1 className=''>뽀모도로</h1>
+          <h1>뽀모도로</h1>
         </button>
       </div>
       <div className='flex items-center gap-4 cursor-pointer text-xl'>

@@ -1,3 +1,4 @@
+import { HiOutlineRefresh } from 'react-icons/Hi';
 export default function Timer({
   active,
   switchMenu,
@@ -11,7 +12,7 @@ export default function Timer({
 
   return (
     <div className='text-white w-10/12 mx-auto pt-5 flex flex-col justify-center mt-10 items-center'>
-      <div className='flex gap-5'>
+      <div className='flex gap-5 items-center'>
         {options.map((option, index) => {
           return (
             <h1
@@ -36,8 +37,8 @@ export default function Timer({
               className='rounded-full w-1.5 h-1.5 bg-orange-500'
               onClick={reset}
             ></button>
-            <span className='inline-block invisible w-[100px] rounded p-1 absolute group-hover:visible text-xs bg-orange-600 bottom-full left-1/2 ml-[-50px]'>
-              다시시작
+            <span className='inline-block invisible rounded p-1.5 absolute group-hover:visible text-center bg-orange-600 bottom-full left-1/2 ml-[-13px]'>
+              <HiOutlineRefresh />
             </span>
           </div>
         </div>

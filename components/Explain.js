@@ -2,9 +2,9 @@ import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
 
 export default function Explain() {
   return (
-    <RoughNotationGroup show={true}>
-      <div className='text-white pb-12'>
-        <div className='pt-20 w-11/12 mx-auto'>
+    <div className='text-white pb-12 w-11/12 mx-auto'>
+      <RoughNotationGroup show={true}>
+        <div className='pt-20'>
           <h1 className='py-2 text-2xl font-bold'>
             <RoughNotation type='underline' color='#FCBB3D' order='1'>
               What is Pomodoro?
@@ -24,7 +24,7 @@ export default function Explain() {
           , after the tomato-shaped kitchen timer that Cirillo used as a
           university student.
         </div>
-      </div>
-    </RoughNotationGroup>
+      </RoughNotationGroup>
+    </div>
   );
 }
