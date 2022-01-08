@@ -1,4 +1,4 @@
-import { HiOutlineRefresh } from 'react-icons/Hi';
+import { FiRotateCcw } from 'react-icons/fi';
 
 export default function Timer({
   active,
@@ -39,7 +39,7 @@ export default function Timer({
               onClick={reset}
             ></button>
             <span className='inline-block invisible rounded p-1.5 absolute group-hover:visible text-center bg-orange-600 bottom-full left-1/2 ml-[-13px]'>
-              <HiOutlineRefresh />
+              <FiRotateCcw />
             </span>
           </div>
         </nav>
