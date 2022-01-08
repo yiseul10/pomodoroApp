@@ -28,8 +28,8 @@ export default function Timer({
           );
         })}
       </div>
-      <div className='w-6/12 m-auto pt-5 flex flex-col'>
-        <nav className='flex justify-between'>
+      <div className='w-10/12 sm:m-auto pt-5 flex flex-col xs:m-0'>
+        <nav className='flex sm:justify-around xs:justify-between'>
           <h1 className='font-semibold text-[#0097FF]'>
             {active === 0 ? 'Focus Time' : 'Break Time'}
           </h1>
