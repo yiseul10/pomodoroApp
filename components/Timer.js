@@ -1,4 +1,5 @@
 import { HiOutlineRefresh } from 'react-icons/Hi';
+
 export default function Timer({
   active,
   switchMenu,
@@ -18,8 +19,8 @@ export default function Timer({
             <h1
               key={index}
               className={`${
-                index === active ? 'bg-zinc-800 bg-opacity-30' : 'text-gray-500'
-              } p-1 cursor-pointer transition-all rounded-2xl`}
+                index === active ? 'line-through' : 'text-gray-500/30'
+              } p-1 cursor-pointer uppercase text-xs  rounded-2xl`}
               onClick={() => switchMenu(index)}
             >
               {option}
@@ -27,8 +28,8 @@ export default function Timer({
           );
         })}
       </div>
-      <div className='mt-10 mb-10'>
-        <div className='flex justify-between'>
+      <div className='w-6/12 m-auto pt-5 flex flex-col'>
+        <nav className='flex justify-between'>
           <h1 className='font-semibold text-[#0097FF]'>
             {active === 0 ? 'Focus Time' : 'Break Time'}
           </h1>
@@ -41,15 +42,14 @@ export default function Timer({
               <HiOutlineRefresh />
             </span>
           </div>
-        </div>
-        <div className='flex items-center'>
-          <h1 className='text-8xl font-bold select-none m-0'>
-            {getTime()}:{seconds.toString().padStart(2, '0')}
-          </h1>
-        </div>
+        </nav>
       </div>
+      <div className='flex items-center'></div>
+      <h1 className='text-8xl font-bold select-none mt-2 mb-5'>
+        {getTime()}:{seconds.toString().padStart(2, '0')}
+      </h1>
       <button
-        className='px-12 py-1 rounded-2xl uppercase font-bold border border-gray-500 hover:border-gray-100'
+        className='transition ease-in-out duration-700 px-12 py-1 rounded-2xl uppercase font-bold border border-gray-500 hover:border-gray-100'
         onClick={startAlarm}
       >
         {startTimer ? 'stop' : 'start'}

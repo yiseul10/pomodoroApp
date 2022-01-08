@@ -68,7 +68,7 @@ export default function Modal({
         </div>
         <button
           onClick={updateTimeDefaultValue}
-          className='cursor-pointer block m-auto mt-5 px-9 py-1 rounded-full text-sm text-gray-800 bg-emerald-300 hover:bg-emerald-100 antialiased'
+          className='transition ease-in-out duration-700 cursor-pointer block m-auto mt-5 px-9 py-1 rounded-full text-sm text-gray-800 bg-emerald-300 hover:bg-emerald-100 antialiased'
         >
           설정
         </button>

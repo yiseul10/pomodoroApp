@@ -1,6 +1,5 @@
-import { FiBookOpen, FiCommand, FiSettings } from 'react-icons/fi';
-import { RiVolumeOffVibrateFill, RiVolumeUpFill } from 'react-icons/ri';
-import { useState } from 'react';
+import { FiBookOpen, FiSettings } from 'react-icons/fi';
+import { RiVolumeOffVibrateFill } from 'react-icons/ri';
 
 export default function Navigation({ muteAlarm, isTimeUp, setOpen }) {
   return (
