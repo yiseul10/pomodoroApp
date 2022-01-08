@@ -115,6 +115,7 @@ export default function Home() {
     return () => {
       clearInterval(timer);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds, pomodoro, short, long, startTimer]);
 
   return (
