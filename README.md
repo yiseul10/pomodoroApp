@@ -32,7 +32,7 @@
 
 ---
 
-<img src='public/pomodoroApp.png'></img>
+<img src='public/pomodoroApp.png' width='390'></img>
 
 [next.js]: https://nextjs.org
 [tailwind css]: https://tailwindcss.com
