@@ -1,6 +1,7 @@
 import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+import React from 'react';
 
-export default function Explain() {
+function Explain() {
   return (
     <div className='text-white pb-12 w-11/12 mx-auto'>
       <RoughNotationGroup show={true}>
@@ -30,3 +31,4 @@ export default function Explain() {
     </div>
   );
 }
+export default React.memo(Explain);

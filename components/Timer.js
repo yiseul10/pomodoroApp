@@ -14,19 +14,17 @@ export default function Timer({
   return (
     <div className='text-white w-10/12 mx-auto pt-5 flex flex-col justify-center mt-10 items-center'>
       <div className='flex gap-5 items-center'>
-        {options.map((option, index) => {
-          return (
-            <h1
-              key={index}
-              className={`${
-                index === active ? 'line-through' : 'text-gray-500/30'
-              } p-1 cursor-pointer uppercase text-xs  rounded-2xl`}
-              onClick={() => switchMenu(index)}
-            >
-              {option}
-            </h1>
-          );
-        })}
+        {options.map((option, index) => (
+          <h1
+            key={index}
+            className={`${
+              index === active ? 'line-through' : 'text-gray-500/30'
+            } p-1 cursor-pointer uppercase text-xs  rounded-2xl`}
+            onClick={() => switchMenu(index)}
+          >
+            {option}
+          </h1>
+        ))}
       </div>
       <div className='w-10/12 sm:m-auto pt-5 flex flex-col xs:m-0'>
         <nav className='flex sm:justify-around xs:justify-between'>

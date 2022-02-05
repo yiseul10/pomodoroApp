@@ -7,12 +7,13 @@ import Navigation from '../components/Navigation';
 import Timer from '../components/Timer';
 
 export default function Home() {
+  // pomodoro default SET
   const [pomodoro, setPomodoro] = useState(25);
   const [short, setShort] = useState(5);
   const [long, setLong] = useState(10);
 
-  const [seconds, setSecond] = useState(0);
   const [active, setActive] = useState(0);
+  const [seconds, setSecond] = useState(0);
   const [consumeSecond, setConsumedSecond] = useState(0);
 
   const [startTimer, setStartTimer] = useState(false);
@@ -25,7 +26,7 @@ export default function Home() {
   const shortBreakRef = useRef();
   const longBreakRef = useRef();
 
-  const updateTimeDefaultValue = () => {
+  const updateTime = () => {
     setPomodoro(pomodoroRef.current.value);
     setShort(shortBreakRef.current.value);
     setLong(longBreakRef.current.value);
@@ -67,8 +68,8 @@ export default function Home() {
   const reset = () => {
     setStartTimer(false);
     setConsumedSecond(0);
-    // setSecond(0);
-    updateTimeDefaultValue();
+    setSecond(0);
+    updateTime();
   };
 
   const timeUp = () => {
@@ -116,7 +117,6 @@ export default function Home() {
     return () => {
       clearInterval(timer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [seconds, pomodoro, short, long, startTimer]);
 
   return (
@@ -140,7 +140,7 @@ export default function Home() {
         pomodoroRef={pomodoroRef}
         shortBreakRef={shortBreakRef}
         longBreakRef={longBreakRef}
-        updateTimeDefaultValue={updateTimeDefaultValue}
+        updateTime={updateTime}
       />
     </>
   );

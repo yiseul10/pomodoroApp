@@ -1,7 +1,8 @@
 import { FiBookOpen, FiSettings } from 'react-icons/fi';
 import { RiVolumeOffVibrateFill } from 'react-icons/ri';
+import React from 'react';
 
-export default function Navigation({ muteAlarm, isTimeUp, setOpen }) {
+function Navigation({ muteAlarm, isTimeUp, setOpen }) {
   return (
     <nav className='pt-5 text-white flex justify-between w-11/12 mx-auto'>
       <div className='flex items-center gap-1'>
@@ -21,3 +22,5 @@ export default function Navigation({ muteAlarm, isTimeUp, setOpen }) {
     </nav>
   );
 }
+
+export default React.memo(Navigation);
