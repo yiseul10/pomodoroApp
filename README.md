@@ -36,12 +36,13 @@
 - 타이머를 일시정지 할 수 있고 해당 페이지를 벗어날 땐 사용자 확인 후 진행됩니다.
 - 타이머가 끝나면 알람이 자동으로 울립니다.
 
+<<<<<<<a HEAD
 <br/>
 <br/>
 
 ## <a href='https://pomodoro-app-rose.vercel.app/' target='_blank' rel='noreferrer'>⏳ 뽀모도로 앱</a>
 
-<br/>
+# <br/>
 
 <img src='public/pomodoroApp.png' width='400'></img>
 

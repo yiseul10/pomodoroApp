@@ -16,9 +16,9 @@ function Explain() {
             후반 프란체스코 시릴로(Francesco Cirillo)가 제안했습니다. 타이머를
             이용해서
             <RoughNotation type='highlight' color='#0097FF' order='2'>
-              25분간 집중
+              25분간
             </RoughNotation>
-            해서 일을 한 다음 5분간 휴식하는 방식입니다. <br />
+            집중해서 일을 한 다음 5분간 휴식하는 방식입니다. <br />
             <RoughNotation type='circle' color='#FD5D4E' order='3'>
               뽀모도로
             </RoughNotation>
